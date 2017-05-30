@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @analysis.id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @analysis.title %>
+</p>
+
+<p>
+  <strong>Field:</strong>
+  <%= @analysis.field %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @analysis.created_at %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @analysis.user_id %>
+</p>
+
+<p>
+  <strong>Videogame:</strong>
+  <%= @analysis.videogame_id %>
+</p>
+
+<%= link_to 'Edit', edit_analysis_path(@analysis) %> |
+<%= link_to 'Back', video_games_path %>

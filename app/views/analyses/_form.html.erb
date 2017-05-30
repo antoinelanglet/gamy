@@ -1,0 +1,47 @@
+<%= form_with(model: analysis, local: true) do |form| %>
+  <% if analysis.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(analysis.errors.count, "error") %> prohibited this analysis from being saved:</h2>
+
+      <ul>
+      <% analysis.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.number_field :id, id: :analysis_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :analysis_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :field %>
+    <%= form.text_area :field, id: :analysis_field %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.datetime_select :created_at, id: :analysis_created_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :analysis_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :videogame_id %>
+    <%= form.number_field :videogame_id, id: :analysis_videogame_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

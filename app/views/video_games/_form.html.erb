@@ -1,0 +1,37 @@
+<%= form_with(model: video_game, local: true) do |form| %>
+  <% if video_game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(video_game.errors.count, "error") %> prohibited this video_game from being saved:</h2>
+
+      <ul>
+      <% video_game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.number_field :id, id: :video_game_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :video_game_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :editor %>
+    <%= form.text_field :editor, id: :video_game_editor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img_url %>
+    <%= form.text_field :img_url, id: :video_game_img_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

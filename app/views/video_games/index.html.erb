@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Video Games</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Editor</th>
+      <th>Img url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @video_games.each do |video_game| %>
+      <tr>
+        <td><%= video_game.id %></td>
+        <td><%= video_game.name %></td>
+        <td><%= video_game.editor %></td>
+        <td><img style="width:80px;" src="<%= video_game.img_url %>"></td>
+        <td><%= link_to 'Show', video_game %></td>
+        <td><%= link_to 'Edit', edit_video_game_path(video_game) %></td>
+        <td><%= link_to 'Destroy', video_game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Video Game', new_video_game_path %>
